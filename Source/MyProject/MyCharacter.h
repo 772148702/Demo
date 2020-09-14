@@ -35,6 +35,7 @@ protected:
 	UPROPERTY(VisibleAnywhere,BluePrintReadOnly,Category = "Components")
 	class UCameraComponent* CameraComp;
 
+	FVector GetPawnViewLocation() const override;
 
 
 

@@ -31,6 +31,14 @@ void AMyCharacter::BeginPlay()
 }
 
 
+FVector AMyCharacter::GetPawnViewLocation() const
+{
+	if (CameraComp) {
+		return CameraComp->GetComponentLocation();
+	}
+	return Super::GetPawnViewLocation();
+}
+
 // Called every frame
 void AMyCharacter::Tick(float DeltaTime)
 {
