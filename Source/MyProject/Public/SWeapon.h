@@ -22,7 +22,7 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	UPROPERTY(VisibleAnywhere, BluePrintReadOnly, Category = "Components")
+	UPROPERTY(EditDefaultsOnly, BluePrintReadOnly, Category = "Components")
 	 class USkeletalMeshComponent*  SkeletalMeshComponent;
 
 	UFUNCTION(BlueprintCallable, Category = "Weapon")
@@ -31,6 +31,15 @@ protected:
 	UPROPERTY(EditDefaultsOnly,BlueprintReadOnly,Category="Weapon")
 	TSubclassOf<UDamageType> DamageType;
 
+	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
+	FName MuzzleSocketName;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
+	class UParticleSystem* MuzzleEffect;
+
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
+	class UParticleSystem*  ImpactEffect;
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
